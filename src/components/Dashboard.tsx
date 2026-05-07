@@ -108,7 +108,7 @@ export default function Dashboard({ activeTab }: { activeTab: string }) {
         setMissionLogs(prev => [...prev, `[RESOLUTION] ${data.resolution}`]);
       }
 
-      await fetch("http://localhost:8000/trigger-mission", {
+      await fetch("https://uptime-architect-backend.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

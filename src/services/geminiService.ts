@@ -1,6 +1,6 @@
 export async function searchSentinelKnowledge(issue: string, context: string) {
   // This calls your Python agent.py
-  const response = await fetch("http://localhost:8000/trigger-mission", {
+  const response = await fetch("https://uptime-architect-backend.onrender.com", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ 
