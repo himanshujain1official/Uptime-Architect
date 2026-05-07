@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg: #0A0A0A;
+  --color-ink: #F5F5F5;
+  --color-line: #2A2A2A;
+  --color-accent: #E0E0E0;
+  --color-danger: #FF3B30;
+  --color-success: #34C759;
+  --color-warning: #FFCC00;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply uppercase tracking-widest font-mono;
+  }
+}
+
+@layer components {
+  .scannable-table {
+    @apply w-full border-collapse font-mono text-xs;
+  }
+
+  .scannable-table th {
+    @apply text-left p-2 border-b border-line opacity-50 uppercase tracking-tighter;
+  }
+
+  .scannable-table td {
+    @apply p-2 border-b border-line align-top;
+  }
+
+  .scannable-table tr:hover {
+    @apply bg-line transition-colors cursor-pointer;
+  }
+
+  .action-card {
+    @apply border border-line p-6 bg-transparent hover:border-accent transition-all;
+  }
+
+  .action-card h3 {
+    @apply mb-4 text-sm font-bold;
+  }
+
+  .action-card ul {
+    @apply list-disc list-inside space-y-2 text-sm opacity-80;
+  }
+
+  .status-indicator {
+    @apply inline-block w-2 h-2 rounded-full mr-2;
+  }
+
+  .code-block {
+    @apply bg-transparent border border-line p-4 rounded-sm font-mono text-xs overflow-x-auto;
+  }
+
+  .minimalist-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .minimalist-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .minimalist-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-line);
+    border-radius: 99px;
+  }
+}
+
