@@ -6,4 +6,5 @@ coverage/
 *.log
 .env*
 !.env.example
-credentials-79fd1d-2026-May-06--09_58_44.csv
+credentials/*
+.csv
