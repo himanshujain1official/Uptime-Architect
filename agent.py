@@ -116,7 +116,7 @@ model = genai.GenerativeModel(
 
 app = FastAPI()
 app.add_middleware(CORSMiddleware, 
-                   allow_origins=["*"], #replace with live URL in production
+                   allow_origins=["https://uptime-architect.vercel.app/"], #replace with live URL in production
                    allow_methods=["*"],
                    allow_headers=["*"]
                    )
