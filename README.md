@@ -14,15 +14,18 @@ Uptime Architect is an autonomous SRE (Site Reliability Engineering) agent.
 We utilized a modern, high-performance tech stack:
  **Frontend:** React with Vite, styled with a minimalist "Cyber-Forensic" aesthetic (Dark mode, high-contrast typography).
  **Backend:** FastAPI (Python 3.13) acting as the "Neural Link" between the UI and the AI.
- **LLM:** Gemini 1.5 Flash for rapid, high-context reasoning.
+ **LLM:** Gemini 2.5 Flash for rapid, high-context reasoning.
  **Search:** Elastic Cloud for handling the RAG (Retrieval-Augmented Generation) pipeline over a massive PDF dataset.
  **Security:** Implemented a secure "Command Buffer" for terminal-first interaction.
 
 ## Challenges we ran into
 Building an agent with this much data wasn't easy. We faced:
  **The "Blackout" Bug:** Early versions of the dashboard crashed (black screen) due to React's strict handling of undefined functions. We solved this by implementing "Bulletproof" UI patterns and optional chaining.
- **Token Quotas:** Sending nearly 10 million characters to an LLM immediately hits API limits. We overcame this by implementing a **Top-K Retrieval** strategy:
+ **Token Quotas:** Sending nearly 10 million characters to an LLM immediately hits API limits. 
+ We overcame this by implementing a **Top-K Retrieval** strategy:
+ 
   $$K_{optimal} = \sum_{i=1}^{n} \text{Relevance}(doc_i)$$
+  
   We only send the top 3 most relevant snippets to stay within the 250,000 token limit.
  **The "Dumb" Terminal:** Connecting a standard text input to an autonomous brain required rewriting the command handler to "Consult the Knowledge Base" rather than just looking for hardcoded keywords.
 
